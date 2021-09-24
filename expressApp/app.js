@@ -33,17 +33,18 @@ This is a basic server
 
   6) Lets make a route to deliver a message for a specified endpoint.
   7) Lets Make a route with a "wildcard" added to the previous route
-  - why would we want/need this?
-  - Are there other ways of getting info from the client in our server routes?
+    - why would we want/need this?
+    - Are there other ways of getting info from the client in our server routes?
 
-  8) 
+  8) Can we access other routes with something, say, like middleware.....? 
+    - What is middleware when talking about express servers?
+    - Is there another parameter after req, res that express gives us?
 
   __extra info__
   ) What does `*` do as an endpoint in the server.
     - When might this we useful and how would you need to use it?
-    - is there another parameter after req, res that express gives us?
-    - Can we access other routes with something, say, like middleware.....? 
-    - What is middleware when talking about express servers?
+   
+    
 
 __ LECTURE TAKEAWAYS FROM YOU ALL __
   -
