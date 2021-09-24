@@ -1,5 +1,4 @@
 // THIS IS OUR SIMPLE SERVER
-
 const express = require("express");
 const app = express();
 
