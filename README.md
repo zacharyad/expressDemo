@@ -1,16 +1,16 @@
 # Express Basics
 
 ## What we will answer
-	- What is happening when someone use the web? Or specifically, how do clients (browsers, lets say), servers and databased interact?
-	- What is an API?
-		- Lets looks at some using curl and postman, and then talk about how that relates to our servers.
-	- What is REST?
-		- What is CRUD?
-	- How can we create a server using express?
-	- How do we create endpoints, like what we saw with other API's?
-	- How do we get info into out server from the client?
-	- What is middleware in express and how does it work?
-	- What is a static folder and how is this used in express?
+	- [ ] What is happening when someone use the web? Or specifically, how do clients (browsers, lets say), servers and databased interact?
+	- [ ] What is an API?
+		- [ ]  Lets looks at some using curl and postman, and then talk about how that relates to our servers.
+	- [ ] What is REST?
+		- [ ] What is CRUD?
+	- [ ] How can we create a server using express?
+	- [ ] How do we create endpoints, like what we saw with other API's?
+	- [ ] How do we get info into out server from the client?
+	- [ ] What is middleware in express and how does it work?
+	- [ ] What is a static folder and how is this used in express?
 
 ### To run the express server:
 	- First make sure you are in the 'expressApp' directory.
