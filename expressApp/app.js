@@ -2,49 +2,8 @@
 const express = require("express");
 const app = express();
 
-// Create - Read - Update - Delete
-
-
-
-app.use("/cats", (req, res) => {
-  // do some stuff this 
-})
-
 app.get("/", (req, res) => res.send("Did we just set up a server?!?!?!?!"));
 
-app.get("/cake", (req, res) => {
-  console.log("hey its cake time");
-  res.send("<h1>Howdy its cake time</h1>")
-  //stops
-})
-
-
-app.get("/cake/:msg", (req, res) => {
-  let messageFromClient = req.params.msg
-  // We are just taking the "message we find" in req.params.msg and sending it back to the client as a response. The console.log shows up in the backend, not the front end.
-  console.log(messageFromClient)
-  res.send(messageFromClient)
-})
-
-app.get("/pizza/:id", (req, res) => {
-  let messageFromClient = req.params.id // /pizza/9 req.paramsid === 9
-  //Go to the DB and fine that id for that pizza that matches and send it back.
-
-  console.log(messageFromClient)
-  res.send(messageFromClient)
-})
-
-app.post("/cake",(req, res) => {
-  let bodyOfForm = req.body;
-  // Make a new cake in the DB with all these column data bits 
-
-} )
-
-app.get("*", (req, res, next) => {
-  //do some stuff, logging things,
-  // This could be a 404
-  res.send("/404.html")
-})
 
 
 
