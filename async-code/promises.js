@@ -3,22 +3,23 @@ const goGetSomethingFromAnApi = require('axios') // This (axios) is a library to
 
 let urlEndpoint = 'https://www.boredapi.com/api/activity/' // this is a free api to use and it returns a random object that represents a suggested task that you can do
 
+let promiseToGetRandomActivity;
 
-let promiseToGetRandomActivity = new Promise((resolve, reject) => {
 
-})
+// *** Lets write async code using .then syntax, The olde way but still used so know it. OLD WAY OF DEALING WITH PROMISES
 
-// *** Lets write async code using .then syntax, The olde way but still used so know it.
 
 
 
 
 // *** lets use the newer try catch along with async/await to deal with this promise
-getActivityFunc = async () => {
+getActivityFuncFromPromise = () => {
 
+   
 }
 
-getActivityFunc()
+getActivityFuncFromPromise()
+
 
 /* ASYNC CODE
     1) What is a promise?

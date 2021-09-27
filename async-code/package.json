@@ -1,0 +1,18 @@
+{
+  "name": "async-code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "promises.js",
+  "dependencies": {
+    "axios": "^0.21.4",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	  "start": "node promises.js"
+ 
+ },
+  "author": "",
+  "license": "ISC"
+}
