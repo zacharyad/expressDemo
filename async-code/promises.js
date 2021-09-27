@@ -3,6 +3,7 @@
 Commment out some code to "clean up" the console.
 
 */
+
 const goGetSomethingFromAnApi = require('axios') // This (axios) is a library to make requests on the backend. 'fetch' can be used on the front end.
 let isResolved = false;
 
@@ -16,7 +17,7 @@ let promiseToGetRandomActivity = new Promise(async (resolve, reject) => {
         resolve(dataFromApi)
     } else {
         // This would be a better place to log out the error to give more info than just "nononono". You could log what was returned from the api call.
-        reject("NONONONONONONON")
+        reject("We have rejected")
     }
 })
 
@@ -59,8 +60,8 @@ promiseToGetRandomActivity.then((res) => {
 // *** lets use the newer try catch along with async/await to deal with this promise
 let getActivityFuncFromPromise = async () => {
     try {
-        let {data} = await promiseToGetRandomActivity
-        console.log(data)
+        let res = await promiseToGetRandomActivity
+        console.log(res.data.activity)
     } catch (error){
         console.log(error)
     }
@@ -76,5 +77,16 @@ getActivityFuncFromPromise()
         - .then().catch
         - async await in a "try catch"?
     4) When would we use this?
+
+    Take away:
+    - express - allowed us to create a really cool server to start making fullstack applications
+    - API's
+    - HTTP, with difference between the protocol and the module that node gives us.
+    - Async code and how to handle it.
+        - Promises
+        - .then().catch()
+        - async/await keywords
+        -try and catch blocks of code
+
 
 */

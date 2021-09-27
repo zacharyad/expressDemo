@@ -22,3 +22,14 @@
 		- Run ```npm start```.
 			- You may have noticed from the package.json file script for start that there is something called 'nodemon', this is an npm package (external dependency) that watches your file for a save and will re-run the server. Makes like easier when you are developing; not having to stop and start all the time manually.
 	- Visiting localhost:1337 in your browser at this point should reveal a message from the server.
+
+
+Take away:
+    - express - allowed us to create a really cool server to start making fullstack applications
+    - API's
+    - HTTP, with difference between the protocol and the module that node gives us.
+    - Async code and how to handle it.
+        - Promises
+        - .then().catch()
+        - async/await keywords
+        -try and catch blocks of code
