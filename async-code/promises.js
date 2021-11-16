@@ -1,73 +1,70 @@
-/*
-
-Commment out some code to "clean up" the console.
-
-*/
-
+const axios = require('axios')
 const goGetSomethingFromAnApi = require('axios') // This (axios) is a library to make requests on the backend. 'fetch' can be used on the front end.
-let isResolved = false;
-
 let urlEndpoint = 'https://www.boredapi.com/api/activity/' // this is a free api to use and it returns a random object that represents a suggested task that you can do
-// promises have await associated with them, value to resolve and possibly reject
-let promiseToGetRandomActivity = new Promise(async (resolve, reject) => {
-    let dataFromApi = await goGetSomethingFromAnApi.get(urlEndpoint)
-
-    if(dataFromApi.data.activity){
-        // we have something to send as a valuen to this promise
-        resolve(dataFromApi)
-    } else {
-        // This would be a better place to log out the error to give more info than just "nononono". You could log what was returned from the api call.
-        reject("We have rejected")
-    }
-})
-
-// WE build out a new promise. This simulates the logic to reject or resolve and show that sometimes it could take a lpng time, say 3 seconds even. 
-let promiseUsingSetTimeout= new Promise(async (resolve, reject) => {
-    setTimeout(() => {
-        // Our code will run so we will set isResolved to true, this is arbitrary to illustrate what other libraries would be deciding on whether to rejects or resolves within the promise
-        isResolved = true;
-        // This is a ternary expression to replace if/else logic if this is resolved it will send on this object of {msg: Hey ....}
-        isResolved ? resolve({msg: "Hey this promise was resolved"}) : reject("This was rejected")
-
-    }, 3000)
 
 
-})
+// What is a promise
+// let hasIssue = false;
 
-// Here we are using this promise and accessing its resolved value. Notice how long this takes to show up in the console.
-
-promiseUsingSetTimeout.then((res) => {
-    console.log("This is from the .then off of promiseUsingSetTimeout: ", res)
-}).catch((err) => {
-    console.log(err)
-})
-
-
-
-// *** Lets write async code using .then syntax, The olde way but still used so know it. OLD WAY OF DEALING WITH PROMISES
-
-promiseToGetRandomActivity.then((res) => {
-    return res.data
-}).then((data) => {
-    //console.log("RES FROM PROMISE: ", data.activity);
-}).catch((err) => {
-    console.log("handling the error: ", err)
-})
+// let myPromise = new Promise((resolve, reject) => {
+//     if(hasIssue){
+//         let error = new Error("Some horrible stuff just went on.")
+//         reject(error)
+//     } else {
+//         resolve("Hey this has been resolved.")
+//     }
+// })
 
 
+// ASYNC AWAIT
+let funcToGetAsyncData = async () => {
+    // await some data
+    try{
+        let dataFromApi1 = await axios.get(urlEndpoint)
+        //let dataFromApi2 = await axios.get(AnotherEndpoint)
 
-
-// *** lets use the newer try catch along with async/await to deal with this promise
-let getActivityFuncFromPromise = async () => {
-    try {
-        let res = await promiseToGetRandomActivity
-        console.log(res.data.activity)
-    } catch (error){
-        console.log(error)
+        //throw new Error("This is my error")
+        console.log(data)
+    } catch(err){
+        // Where we handle the error
+        console.log(err)
     }
 }
 
-getActivityFuncFromPromise()
+
+// Without try catch but still works
+let funcToGetAsyncData = async () => {
+    // await some data
+ 
+        let {writable} = await axios.get(urlEndpoint)
+        //throw new Error("This is my error")
+
+        if(data){
+            // everything is good and do some stuff
+            console.log(data)
+        } else {
+            let err = new Error
+            console.log(err)
+        }
+}
+
+
+
+// .Then .catch (OLDER WAY)
+// axios.get(urlEndpoint).then((res)=>{
+//     // We can do some stuff
+//     // console.log(res)
+//     // we could possible update the DOM with a new node with this data in it.
+//     return res.data
+// }).then((data)=>{
+//     console.log(data)
+
+// })
+// .catch((error) => {
+//     // This is where we handle the error
+// })
+
+funcToGetAsyncData()
 
 
 /* ASYNC CODE
@@ -79,14 +76,16 @@ getActivityFuncFromPromise()
     4) When would we use this?
 
     Take away:
-    - express - allowed us to create a really cool server to start making fullstack applications
-    - API's
-    - HTTP, with difference between the protocol and the module that node gives us.
     - Async code and how to handle it.
         - Promises
         - .then().catch()
         - async/await keywords
         -try and catch blocks of code
 
-
+    -What you should do to practice:
+        - rewrite a new promise.
+        - rewrite a function that gets data asynchronously
+            - use the async/await way and then the .then.catch way.
+        - Destructure that object coming back from the axios call!!!!!
+        
 */

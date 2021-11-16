@@ -10,9 +10,8 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	  "start": "node promises.js"
- 
- },
+    "start": "node promises.js"
+  },
   "author": "",
   "license": "ISC"
 }
