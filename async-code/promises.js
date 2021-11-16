@@ -15,7 +15,6 @@ let urlEndpoint = 'https://www.boredapi.com/api/activity/' // this is a free api
 //     }
 // })
 
-
 // ASYNC AWAIT
 let funcToGetAsyncData = async () => {
     // await some data
@@ -87,5 +86,5 @@ funcToGetAsyncData()
         - rewrite a function that gets data asynchronously
             - use the async/await way and then the .then.catch way.
         - Destructure that object coming back from the axios call!!!!!
-        
+
 */
